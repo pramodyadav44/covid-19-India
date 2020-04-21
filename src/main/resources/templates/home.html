@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Corona Virus Global Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    	
+    	body{ background-color:#686868}
+    	.head{color:white}
+    	.dis{color:white}
+    	
+   	</style>
+   	</head>
+
+  <body>
+  	<div class="container">
+  	
+  	<h1 class="head display-4">
+  		COVID-19 Cases India
+  	</h1>
+  	
+  	<p class="dis">
+  		This Web Application tracks the daily number of CORONA VIRUS cases across <b>INDIA</b>
+  	</p>
+  	
+  	<div class="jumbotron">
+  		<div class="container">
+    		<h1 class="display-4 font-weight-bold" th:text="${totalcases}">0</h1>
+    		<p class="lead font-weight-normal">No. of Cases reported till Now</p>
+    		
+  		</div>
+	</div>
+  
+  	<table class="table table-light table-striped table-hover">
+      <tr class="thead-dark">
+        <th>States</th>
+        <th>Confirmed Cases</th>
+        <th>Total Discharged</th>
+        <th>Total Death(s)</th>
+      </tr>
+      
+      <tr th:each="data : ${data1}">
+        <td class="font-weight-normal" th:text="${data.name}"></td>
+        <td th:text="${data.totalConfirmed}"></td>
+        <td th:text="${data.disChargers}">0</td>
+        <td th:text="${data.deaths}">0</td>
+      </tr>
+    </table>
+  
+    
+  </div>
+  </body>
+
+</html>
